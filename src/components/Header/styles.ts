@@ -17,11 +17,15 @@ export const Container = styled.div<ContainerProps>`
     justify-content: space-between;
 
     nav {
+      display: flex;
+
       a {
         color: #fff;
         text-decoration: none;
         font-size: 16px;
         transition: opacity 0.2s;
+        display: block;
+        position: relative;
 
         & + a {
           margin-left: 32px;
@@ -29,6 +33,16 @@ export const Container = styled.div<ContainerProps>`
 
         &:hover {
           opacity: 0.6;
+        }
+
+        &.active::after {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 2px;
+          margin-top: 10px;
+          background-color: #ff872c;
         }
       }
     }
